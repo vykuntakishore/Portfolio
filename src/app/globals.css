@@ -6,27 +6,9 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  overflow-x: hidden;
-
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05070b;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -36,9 +18,309 @@ body {
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: #05070b;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background: #05070b;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main,
+section {
+  width: 100%;
+  max-width: 100%;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+/* =========================================================
+   ONE CONTINUOUS BACKGROUND FOR THE ENTIRE WEBSITE
+========================================================= */
+
+.page-flow {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 36% 7%,
+      rgba(23, 62, 118, 0.18) 0%,
+      rgba(16, 44, 86, 0.08) 28%,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 90% 9%,
+      rgba(105, 53, 155, 0.13) 0%,
+      rgba(65, 32, 100, 0.05) 30%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 52% 42%,
+      rgba(16, 46, 90, 0.07),
+      transparent 50%
+    ),
+    linear-gradient(
+      rgba(255, 255, 255, 0.022) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.022) 1px,
+      transparent 1px
+    ),
+    #05070b;
+
+  background-size:
+    auto,
+    auto,
+    auto,
+    48px 48px,
+    48px 48px,
+    auto;
+
+  background-attachment: scroll;
+}
+
+/* extremely soft page atmosphere */
+
+.page-flow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 18%,
+      rgba(59, 130, 246, 0.035),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(168, 85, 247, 0.025),
+      transparent 34%
+    );
+}
+
+/* =========================================================
+   ALL SECTIONS ARE TRANSPARENT
+========================================================= */
+
+.portfolio-section,
+.hero-batman {
+  position: relative;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+/* =========================================================
+   HERO ATMOSPHERE
+   Important: effects fade BEFORE the section boundary
+========================================================= */
+
+.hero-atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+
+  /*
+    This makes the effects disappear gradually instead of
+    ending abruptly at the Hero/About boundary.
+  */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 58%,
+    rgba(0, 0, 0, 0.65) 76%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 58%,
+    rgba(0, 0, 0, 0.65) 76%,
+    transparent 100%
+  );
+}
+
+.hero-blue-glow {
+  position: absolute;
+  left: 28%;
+  top: 25%;
+  width: 650px;
+  height: 650px;
+  border-radius: 9999px;
+
+  background: rgba(37, 99, 235, 0.065);
+  filter: blur(100px);
+}
+
+.hero-purple-glow {
+  position: absolute;
+  right: -100px;
+  top: 80px;
+  width: 650px;
+  height: 650px;
+  border-radius: 9999px;
+
+  background: rgba(126, 34, 206, 0.07);
+  filter: blur(110px);
+}
+
+/* =========================================================
+   SUBTLE SIGNAL LIGHT
+========================================================= */
+
+.hero-signal {
+  position: absolute;
+  right: 7%;
+  top: 7%;
+  width: 430px;
+  height: 430px;
+  border-radius: 9999px;
+  pointer-events: none;
+
+  opacity: 0.14;
+  filter: blur(14px);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(210, 225, 255, 0.16) 0%,
+      rgba(90, 130, 255, 0.07) 28%,
+      transparent 68%
+    );
+
+  -webkit-mask-image: radial-gradient(
+    circle,
+    black 0%,
+    rgba(0, 0, 0, 0.7) 48%,
+    transparent 76%
+  );
+
+  mask-image: radial-gradient(
+    circle,
+    black 0%,
+    rgba(0, 0, 0, 0.7) 48%,
+    transparent 76%
+  );
+}
+
+/* =========================================================
+   ORIGINAL WING-LIKE PHOTO ACCENT
+========================================================= */
+
+.photo-wing-accent {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 620px;
+  height: 340px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.12;
+}
+
+.photo-wing-accent::before,
+.photo-wing-accent::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 48%;
+  height: 70%;
+
+  background: linear-gradient(
+    135deg,
+    rgba(19, 30, 50, 0.85),
+    rgba(5, 7, 11, 0)
+  );
+}
+
+.photo-wing-accent::before {
+  left: 0;
+
+  transform: translateY(-50%) rotate(-8deg);
+
+  clip-path: polygon(
+    100% 42%,
+    72% 16%,
+    42% 8%,
+    18% 16%,
+    0% 40%,
+    20% 48%,
+    10% 75%,
+    45% 62%,
+    74% 82%
+  );
+}
+
+.photo-wing-accent::after {
+  right: 0;
+
+  transform: translateY(-50%) rotate(8deg) scaleX(-1);
+
+  clip-path: polygon(
+    100% 42%,
+    72% 16%,
+    42% 8%,
+    18% 16%,
+    0% 40%,
+    20% 48%,
+    10% 75%,
+    45% 62%,
+    74% 82%
+  );
+}
+
+/* =========================================================
+   HIDE SCROLLBAR FOR HORIZONTAL SKILLS
+   scrolling still works
+========================================================= */
+
+.skills-scroll {
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(96, 165, 250, 0.35)
+    rgba(255, 255, 255, 0.025);
+}
+
+.skills-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.skills-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 9999px;
+}
+
+.skills-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    rgba(96, 165, 250, 0.55),
+    rgba(168, 85, 247, 0.55)
+  );
+
+  border-radius: 9999px;
 }

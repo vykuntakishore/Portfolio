@@ -18,6 +18,7 @@ const experiences = [
     ],
     skills: ["Snowflake", "dbt", "AWS", "DataStage", "SQL", "Python"],
   },
+
   {
     company: "LTIMindtree",
     role: "Data Analyst",
@@ -32,6 +33,7 @@ const experiences = [
     ],
     skills: ["Python", "PySpark", "Spark SQL", "Power BI", "SQL"],
   },
+
   {
     company: "Aadhya Skills",
     role: "Summer Intern",
@@ -45,6 +47,7 @@ const experiences = [
     ],
     skills: [],
   },
+
   {
     company: "Tessolve",
     role: "Summer Intern",
@@ -64,15 +67,18 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative w-full max-w-full overflow-x-hidden border-t border-white/10 px-6 py-24 md:px-12 lg:px-20"
+      className="portfolio-section w-full max-w-full overflow-x-hidden px-6 py-20 md:px-12 md:py-24 lg:px-20"
     >
       <div className="mx-auto w-full min-w-0 max-w-7xl">
 
-        {/* Section Header */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{
+            once: false,
+            amount: 0.2,
+          }}
           transition={{
             duration: 0.7,
             ease: [0.22, 1, 0.36, 1],
@@ -88,11 +94,12 @@ export default function Experience() {
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative mt-16">
+        <div className="relative mt-14">
 
           <div className="absolute left-[7px] top-2 hidden h-full w-px bg-white/10 md:block" />
 
           <div className="space-y-10">
+
             {experiences.map((experience, index) => (
               <motion.div
                 key={`${experience.company}-${experience.period}`}
@@ -117,12 +124,11 @@ export default function Experience() {
                 }}
                 className="relative md:pl-12"
               >
-                {/* Timeline Dot */}
+
                 <div
-                  className={`absolute left-0 top-3 hidden h-4 w-4 rounded-full border-4 border-black md:block ${experience.dotClass}`}
+                  className={`absolute left-0 top-3 hidden h-4 w-4 rounded-full border-4 border-[#05070b] md:block ${experience.dotClass}`}
                 />
 
-                {/* Experience Card */}
                 <motion.div
                   whileHover={{
                     y: -4,
@@ -132,16 +138,14 @@ export default function Experience() {
                     duration: 0.25,
                     ease: "easeOut",
                   }}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-white/20 hover:bg-white/[0.05] md:p-8"
+                  className="rounded-2xl border border-white/10 bg-white/[0.028] p-6 backdrop-blur-sm transition-colors hover:border-white/20 hover:bg-white/[0.045] md:p-8"
                 >
 
-                  {/* Top Row */}
                   <div className="flex flex-col gap-7 md:flex-row md:items-start md:justify-between">
 
-                    {/* Logo + Company */}
+                    {/* Logo + Info */}
                     <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
 
-                      {/* Logo */}
                       <div className="flex h-28 w-36 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-zinc-100 p-2 md:h-32 md:w-44">
 
                         <Image
@@ -154,7 +158,6 @@ export default function Experience() {
 
                       </div>
 
-                      {/* Company Info */}
                       <div className="min-w-0">
 
                         <h3 className="break-words text-2xl font-semibold text-white md:text-3xl">
@@ -169,7 +172,7 @@ export default function Experience() {
 
                     </div>
 
-                    {/* Date & Location */}
+                    {/* Date */}
                     <div className="md:text-right">
 
                       <p className="text-sm text-zinc-400">
@@ -202,7 +205,7 @@ export default function Experience() {
                       {experience.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-zinc-400"
+                          className="rounded-full border border-white/10 bg-white/[0.025] px-3 py-1 text-xs text-zinc-400"
                         >
                           {skill}
                         </span>
@@ -212,8 +215,10 @@ export default function Experience() {
                   )}
 
                 </motion.div>
+
               </motion.div>
             ))}
+
           </div>
 
         </div>
