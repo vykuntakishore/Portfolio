@@ -245,15 +245,6 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
 
-          {/* Resume */}
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs font-medium text-zinc-300 transition duration-300 hover:border-blue-400/30 hover:bg-blue-400/[0.06] hover:text-white"
-          >
-            Resume
-          </a>
 
           {/* Connect */}
           <a
@@ -352,15 +343,7 @@ export default function Navbar() {
           {/* Mobile Buttons */}
           <div className="mt-5 grid grid-cols-2 gap-3">
 
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-medium text-zinc-300 transition hover:bg-white/[0.06] hover:text-white"
-            >
-              Resume
-            </a>
+            
 
             <a
               href="/#contact"
