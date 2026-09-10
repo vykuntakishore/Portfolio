@@ -21,9 +21,6 @@ import {
   SiDocker,
   SiTerraform,
   SiGithubactions,
-  SiPostgresql,
-  SiMysql,
-  SiR,
 } from "react-icons/si";
 
 import {
@@ -34,7 +31,7 @@ import {
   FaAws,
   FaChartBar,
   FaCloud,
-  FaJava,
+  FaFlask,
 } from "react-icons/fa";
 
 type Skill = {
@@ -52,78 +49,9 @@ type SkillGroup = {
 
 const skillGroups: SkillGroup[] = [
   {
-    title: "Databases & Warehousing",
-    icon: FaDatabase,
-    color: "#38BDF8",
-
-    skills: [
-      {
-        name: "Snowflake",
-        icon: SiSnowflake,
-        color: "#29B5E8",
-      },
-      {
-        name: "Amazon Redshift",
-        icon: FaAws,
-        color: "#FF9900",
-      },
-      {
-        name: "SQL Server",
-        icon: FaDatabase,
-        color: "#CC2927",
-      },
-      {
-        name: "PostgreSQL",
-        icon: SiPostgresql,
-        color: "#4169E1",
-      },
-      {
-        name: "MySQL",
-        icon: SiMysql,
-        color: "#4479A1",
-      },
-    ],
-  },
-
-  {
-    title: "ETL & Transformation",
-    icon: FaCode,
-    color: "#F97316",
-
-    skills: [
-      {
-        name: "IBM DataStage",
-        icon: FaDatabase,
-        color: "#0F62FE",
-      },
-      {
-        name: "dbt Core",
-        icon: FaCode,
-        color: "#FF694B",
-      },
-      {
-        name: "ETL / ELT",
-        icon: FaCode,
-        color: "#A855F7",
-      },
-      {
-        name: "Incremental Models",
-        icon: FaCode,
-        color: "#8B5CF6",
-      },
-      {
-        name: "Data Contracts",
-        icon: FaCode,
-        color: "#EC4899",
-      },
-    ],
-  },
-
-  {
-    title: "Cloud & Integration",
+    title: "Cloud & Data Platforms",
     icon: FaCloud,
-    color: "#FF9900",
-
+    color: "#38BDF8",
     skills: [
       {
         name: "AWS",
@@ -146,23 +74,27 @@ const skillGroups: SkillGroup[] = [
         color: "#8C4FFF",
       },
       {
-        name: "REST APIs",
-        icon: FaCode,
-        color: "#06B6D4",
+        name: "Amazon Redshift",
+        icon: FaAws,
+        color: "#FF4F8B",
       },
       {
-        name: "JSON",
-        icon: FaCode,
-        color: "#FACC15",
+        name: "Snowflake",
+        icon: SiSnowflake,
+        color: "#29B5E8",
+      },
+      {
+        name: "Databricks",
+        icon: FaDatabase,
+        color: "#FF3621",
       },
     ],
   },
 
   {
-    title: "Programming",
+    title: "Programming & Querying",
     icon: FaCode,
     color: "#FACC15",
-
     skills: [
       {
         name: "Python",
@@ -170,24 +102,67 @@ const skillGroups: SkillGroup[] = [
         color: "#3776AB",
       },
       {
+        name: "PySpark",
+        icon: SiApachespark,
+        color: "#E25A1C",
+      },
+      {
         name: "SQL",
         icon: FaDatabase,
         color: "#38BDF8",
       },
       {
-        name: "Java",
-        icon: FaJava,
-        color: "#ED8B00",
-      },
-      {
-        name: "R",
-        icon: SiR,
-        color: "#276DC3",
-      },
-      {
         name: "C",
         icon: FaCode,
         color: "#A8B9CC",
+      },
+      {
+        name: "NI LabVIEW",
+        icon: FaFlask,
+        color: "#FACC15",
+      },
+    ],
+  },
+
+  {
+    title: "ETL & Transformation",
+    icon: FaCode,
+    color: "#F97316",
+    skills: [
+      {
+        name: "IBM DataStage",
+        icon: FaDatabase,
+        color: "#0F62FE",
+      },
+      {
+        name: "dbt Core",
+        icon: FaCode,
+        color: "#FF694B",
+      },
+      {
+        name: "dbt Models",
+        icon: FaCode,
+        color: "#FF694B",
+      },
+      {
+        name: "Incremental Models",
+        icon: FaCode,
+        color: "#8B5CF6",
+      },
+      {
+        name: "dbt Macros",
+        icon: FaCode,
+        color: "#F97316",
+      },
+      {
+        name: "dbt Tests",
+        icon: FaCode,
+        color: "#22C55E",
+      },
+      {
+        name: "ETL / ELT",
+        icon: FaCode,
+        color: "#A855F7",
       },
     ],
   },
@@ -196,7 +171,6 @@ const skillGroups: SkillGroup[] = [
     title: "Big Data & Processing",
     icon: SiApachespark,
     color: "#E25A1C",
-
     skills: [
       {
         name: "Apache Spark",
@@ -230,8 +204,12 @@ const skillGroups: SkillGroup[] = [
     title: "Data Modeling",
     icon: FaDatabase,
     color: "#8B5CF6",
-
     skills: [
+      {
+        name: "Medallion Architecture",
+        icon: FaDatabase,
+        color: "#F59E0B",
+      },
       {
         name: "Star Schema",
         icon: FaDatabase,
@@ -257,45 +235,6 @@ const skillGroups: SkillGroup[] = [
         icon: FaDatabase,
         color: "#8B5CF6",
       },
-      {
-        name: "Medallion Architecture",
-        icon: FaDatabase,
-        color: "#F59E0B",
-      },
-    ],
-  },
-
-  {
-    title: "CI/CD & DevOps",
-    icon: FaGitAlt,
-    color: "#F05032",
-
-    skills: [
-      {
-        name: "Git",
-        icon: FaGitAlt,
-        color: "#F05032",
-      },
-      {
-        name: "GitHub Actions",
-        icon: SiGithubactions,
-        color: "#2088FF",
-      },
-      {
-        name: "Terraform",
-        icon: SiTerraform,
-        color: "#844FBA",
-      },
-      {
-        name: "Docker",
-        icon: SiDocker,
-        color: "#2496ED",
-      },
-      {
-        name: "DEV / QA-UAT / PROD",
-        icon: FaCode,
-        color: "#22C55E",
-      },
     ],
   },
 
@@ -303,17 +242,16 @@ const skillGroups: SkillGroup[] = [
     title: "Data Quality & Governance",
     icon: FaShieldAlt,
     color: "#10B981",
-
     skills: [
-      {
-        name: "dbt Tests",
-        icon: FaCode,
-        color: "#FF694B",
-      },
       {
         name: "Schema Validation",
         icon: FaShieldAlt,
         color: "#22C55E",
+      },
+      {
+        name: "Data Profiling",
+        icon: FaShieldAlt,
+        color: "#14B8A6",
       },
       {
         name: "Source-to-Target Reconciliation",
@@ -326,7 +264,7 @@ const skillGroups: SkillGroup[] = [
         color: "#F59E0B",
       },
       {
-        name: "Row-Level Security",
+        name: "RLAC",
         icon: FaShieldAlt,
         color: "#EF4444",
       },
@@ -334,10 +272,47 @@ const skillGroups: SkillGroup[] = [
   },
 
   {
-    title: "Analytics & Visualization",
+    title: "DevOps & Engineering",
+    icon: FaGitAlt,
+    color: "#F05032",
+    skills: [
+      {
+        name: "Git",
+        icon: FaGitAlt,
+        color: "#F05032",
+      },
+      {
+        name: "GitHub Actions",
+        icon: SiGithubactions,
+        color: "#2088FF",
+      },
+      {
+        name: "CI/CD",
+        icon: FaGitAlt,
+        color: "#22C55E",
+      },
+      {
+        name: "Docker",
+        icon: SiDocker,
+        color: "#2496ED",
+      },
+      {
+        name: "Terraform",
+        icon: SiTerraform,
+        color: "#844FBA",
+      },
+      {
+        name: "DEV / QA-UAT / PROD",
+        icon: FaCode,
+        color: "#22C55E",
+      },
+    ],
+  },
+
+  {
+    title: "Reporting & Integration",
     icon: FaChartBar,
     color: "#FACC15",
-
     skills: [
       {
         name: "Power BI",
@@ -350,9 +325,19 @@ const skillGroups: SkillGroup[] = [
         color: "#4E79A7",
       },
       {
-        name: "Snowflake Dashboards",
-        icon: SiSnowflake,
-        color: "#29B5E8",
+        name: "REST APIs",
+        icon: FaCode,
+        color: "#06B6D4",
+      },
+      {
+        name: "JSON",
+        icon: FaCode,
+        color: "#FACC15",
+      },
+      {
+        name: "Geocoding Workflows",
+        icon: FaCloud,
+        color: "#22C55E",
       },
     ],
   },
@@ -466,14 +451,14 @@ export default function Skills() {
             </p>
 
             <h2 className="mt-6 text-3xl font-bold text-white md:text-5xl">
-              Technologies i'm proficient in.
+              Technologies I&apos;m proficient in.
             </h2>
 
             <p className="mt-6 max-w-3xl text-base leading-8 text-zinc-400 md:text-lg">
-              Explore my technology stack across cloud,
-              databases, transformation, distributed
-              processing, modeling, DevOps, governance,
-              analytics, and programming.
+              My core stack spans cloud data platforms,
+              ETL/ELT development, Snowflake, Databricks,
+              distributed processing, data modeling,
+              governance, DevOps, reporting, and analytics.
             </p>
           </motion.div>
 
@@ -509,7 +494,6 @@ export default function Skills() {
             </button>
 
           </div>
-
         </div>
 
         {/* Mobile Arrows */}
@@ -519,6 +503,7 @@ export default function Skills() {
             type="button"
             onClick={scrollLeft}
             disabled={!canScrollLeft}
+            aria-label="Previous skills"
             className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] disabled:opacity-30"
           >
             <ChevronLeft size={21} />
@@ -528,6 +513,7 @@ export default function Skills() {
             type="button"
             onClick={scrollRight}
             disabled={!canScrollRight}
+            aria-label="Next skills"
             className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] disabled:opacity-30"
           >
             <ChevronRight size={21} />
@@ -542,6 +528,7 @@ export default function Skills() {
         {/* Horizontal Carousel */}
         <div className="relative mt-12">
 
+          {/* Left Fade */}
           <div
             className={`pointer-events-none absolute bottom-3 left-0 top-0 z-20 w-16 bg-gradient-to-r from-[#05070b] to-transparent transition-opacity duration-300 ${
               canScrollLeft
@@ -550,6 +537,7 @@ export default function Skills() {
             }`}
           />
 
+          {/* Right Fade */}
           <div
             className={`pointer-events-none absolute bottom-3 right-0 top-0 z-20 w-16 bg-gradient-to-l from-[#05070b] to-transparent transition-opacity duration-300 ${
               canScrollRight
@@ -582,7 +570,7 @@ export default function Skills() {
                   key={group.title}
                   initial={{
                     opacity: 0,
-                    y: 30,
+                    y: 24,
                   }}
                   whileInView={{
                     opacity: 1,
@@ -590,11 +578,14 @@ export default function Skills() {
                   }}
                   viewport={{
                     once: true,
-                    amount: 0.1,
+                    amount: 0.08,
                   }}
                   transition={{
-                    duration: 0.4,
-                    delay: Math.min(index * 0.05, 0.25),
+                    duration: 0.35,
+                    delay: Math.min(
+                      index * 0.04,
+                      0.18
+                    ),
                     ease: [0.22, 1, 0.36, 1],
                   }}
                   className="
@@ -660,10 +651,9 @@ export default function Skills() {
                       />
 
                     </div>
-
                   </div>
 
-                  {/* Skill List */}
+                  {/* Skills */}
                   <div className="mt-7 space-y-3">
 
                     {group.skills.map((skill) => {
@@ -684,8 +674,7 @@ export default function Skills() {
                           <div
                             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
                             style={{
-                              color:
-                                skill.color,
+                              color: skill.color,
                               backgroundColor:
                                 `${skill.color}12`,
                             }}
@@ -719,6 +708,7 @@ export default function Skills() {
 
           </div>
 
+          {/* Scroll Hint */}
           <div className="mt-2 flex items-center justify-center gap-2 text-xs uppercase tracking-[0.18em] text-zinc-600">
 
             <ChevronLeft size={14} />

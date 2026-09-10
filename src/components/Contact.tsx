@@ -3,7 +3,6 @@ import {
   Phone,
   MapPin,
   ArrowUpRight,
-  BriefcaseBusiness,
 } from "lucide-react";
 
 import {
@@ -21,12 +20,10 @@ export default function Contact() {
     >
       <Reveal className="mx-auto w-full min-w-0 max-w-7xl">
 
-        {/* Section Label */}
         <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
           Contact
         </p>
 
-        {/* Main Contact Card */}
         <div className="relative mt-8 overflow-hidden rounded-[2rem] border border-white/10 bg-[#080b11]/80 p-8 backdrop-blur-md md:p-12 lg:p-14">
 
           {/* Background Glows */}
@@ -36,10 +33,7 @@ export default function Contact() {
 
           <div className="relative z-10 grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
 
-            {/* ===============================
-                LEFT SIDE
-            =============================== */}
-
+            {/* LEFT */}
             <div>
 
               {/* Availability */}
@@ -51,20 +45,20 @@ export default function Contact() {
                 </span>
 
                 Open to Full-Time Opportunities
-
               </div>
 
               <h2 className="mt-7 max-w-2xl text-3xl font-bold leading-tight text-white md:text-5xl">
-                Let&apos;s build something meaningful with data.
+                Let&apos;s turn data into reliable systems and useful insights.
               </h2>
 
               <p className="mt-6 max-w-xl text-base leading-8 text-zinc-400 md:text-lg">
-                I&apos;m open to full-time Data Engineering opportunities and
-                conversations around cloud data platforms, Snowflake, dbt, AWS,
-                scalable pipelines, analytics, and modern Data Engineering.
+                I&apos;m open to full-time Data Engineer and Data Analyst
+                opportunities involving Snowflake, Databricks, AWS, dbt,
+                PySpark, SQL, cloud data platforms, analytics, and scalable
+                data pipelines.
               </p>
 
-              {/* CTA Buttons */}
+              {/* CTA */}
               <div className="mt-8 flex flex-wrap gap-3">
 
                 <a
@@ -82,13 +76,13 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="/resume.pdf"
+                  href="https://www.linkedin.com/in/vykunta-kishore-67ba79402"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 font-medium text-zinc-300 transition duration-300 hover:border-cyan-400/25 hover:bg-cyan-400/[0.05] hover:text-white"
+                  className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 font-medium text-zinc-300 transition duration-300 hover:border-blue-400/30 hover:bg-blue-400/[0.05] hover:text-white"
                 >
-                  <BriefcaseBusiness size={19} />
-                  View Resume
+                  <FaLinkedinIn size={19} />
+                  Connect on LinkedIn
                 </a>
 
               </div>
@@ -136,10 +130,7 @@ export default function Contact() {
 
             </div>
 
-            {/* ===============================
-                RIGHT SIDE
-            =============================== */}
-
+            {/* RIGHT */}
             <div className="space-y-4">
 
               {/* Location */}
@@ -152,7 +143,6 @@ export default function Contact() {
                   </div>
 
                   <div>
-
                     <p className="text-xs uppercase tracking-[0.18em] text-zinc-600">
                       Location
                     </p>
@@ -160,7 +150,6 @@ export default function Contact() {
                     <p className="mt-1 text-lg font-medium text-white">
                       Chicago, IL
                     </p>
-
                   </div>
 
                 </div>
@@ -223,14 +212,13 @@ export default function Contact() {
 
               </div>
 
-              {/* Response Card */}
+              {/* Closing Message */}
               <div className="rounded-2xl border border-dashed border-white/10 bg-white/[0.015] p-5">
-
                 <p className="text-sm leading-6 text-zinc-500">
-                  Have a Data Engineering opportunity or want to discuss a
-                  project? Feel free to reach out through email or LinkedIn.
+                  Have a Data Engineering or Data Analytics opportunity,
+                  or want to discuss a project? Feel free to reach out
+                  through email or LinkedIn.
                 </p>
-
               </div>
 
             </div>

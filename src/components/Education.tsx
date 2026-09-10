@@ -48,10 +48,7 @@ export default function Education() {
     >
       <div className="mx-auto w-full max-w-7xl">
 
-        {/* ===============================
-            SECTION HEADER
-        =============================== */}
-
+        {/* Section Header */}
         <motion.div
           initial={{
             opacity: 0,
@@ -85,16 +82,10 @@ export default function Education() {
           </p>
         </motion.div>
 
-        {/* ===============================
-            EDUCATION CARDS
-        =============================== */}
-
+        {/* Education Cards */}
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
 
-          {/* ===============================
-              ROWAN UNIVERSITY
-          =============================== */}
-
+          {/* Rowan University */}
           <motion.article
             initial={{
               opacity: 0,
@@ -114,7 +105,6 @@ export default function Education() {
             }}
             className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#080b11]/80 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-cyan-400/25 hover:shadow-[0_20px_70px_rgba(34,211,238,0.07)]"
           >
-            {/* Accent Glow */}
             <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-cyan-400/[0.06] blur-3xl transition duration-500 group-hover:bg-cyan-400/[0.10]" />
 
             {/* Logo */}
@@ -161,7 +151,7 @@ export default function Education() {
                     size={18}
                     className="shrink-0 text-cyan-300"
                   />
-                  Aug 2023 – Apr 2025
+                  Aug 2023 – May 2025
                 </div>
 
                 <div className="flex items-center gap-3 text-sm text-zinc-400">
@@ -178,7 +168,7 @@ export default function Education() {
               <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/15 bg-cyan-400/[0.05] px-4 py-2 text-sm text-cyan-200">
                 GPA
                 <span className="font-semibold text-white">
-                  3.5
+                  3.5 / 4
                 </span>
               </div>
 
@@ -213,10 +203,7 @@ export default function Education() {
 
           </motion.article>
 
-          {/* ===============================
-              KL UNIVERSITY
-          =============================== */}
-
+          {/* KL University */}
           <motion.article
             initial={{
               opacity: 0,
@@ -237,7 +224,6 @@ export default function Education() {
             }}
             className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#080b11]/80 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-purple-400/25 hover:shadow-[0_20px_70px_rgba(168,85,247,0.07)]"
           >
-            {/* Accent Glow */}
             <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-purple-400/[0.06] blur-3xl transition duration-500 group-hover:bg-purple-400/[0.10]" />
 
             {/* Logo */}
@@ -284,7 +270,7 @@ export default function Education() {
                     size={18}
                     className="shrink-0 text-purple-300"
                   />
-                  Jul 2019 – Mar 2023
+                  Jul 2019 – May 2023
                 </div>
 
                 <div className="flex items-center gap-3 text-sm text-zinc-400">
@@ -292,7 +278,7 @@ export default function Education() {
                     size={18}
                     className="shrink-0 text-purple-300"
                   />
-                  Vijayawada, India
+                  India
                 </div>
 
               </div>
@@ -301,7 +287,7 @@ export default function Education() {
               <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-purple-400/15 bg-purple-400/[0.05] px-4 py-2 text-sm text-purple-200">
                 Grade
                 <span className="font-semibold text-white">
-                  8.9
+                  8.9 / 10
                 </span>
               </div>
 

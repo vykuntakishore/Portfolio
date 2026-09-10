@@ -4,7 +4,6 @@ import {
   MapPin,
   Mail,
   Phone,
-  Download,
   ArrowRight,
 } from "lucide-react";
 
@@ -19,12 +18,7 @@ export default function Hero() {
       id="home"
       className="hero-batman relative w-full max-w-full overflow-hidden px-6 pb-20 pt-28 md:px-12 md:pb-24 md:pt-32 lg:px-16 xl:px-20"
     >
-      {/* =====================================================
-          HERO-ONLY EFFECTS
-
-          These fade out before reaching About.
-      ====================================================== */}
-
+      {/* Hero Effects */}
       <div className="hero-atmosphere -z-10">
         <div className="hero-blue-glow" />
         <div className="hero-purple-glow" />
@@ -32,16 +26,10 @@ export default function Hero() {
 
       <div className="hero-signal -z-10" />
 
-      {/* =====================================================
-          CONTENT
-      ====================================================== */}
-
+      {/* Main Content */}
       <div className="relative z-10 mx-auto grid w-full max-w-[1500px] items-center gap-10 lg:grid-cols-[1.13fr_0.87fr] xl:grid-cols-[1.1fr_0.9fr]">
 
-        {/* =====================================================
-            LEFT
-        ====================================================== */}
-
+        {/* LEFT */}
         <div className="min-w-0">
 
           <p className="text-sm uppercase tracking-[0.22em] text-zinc-400 sm:text-base sm:tracking-[0.25em]">
@@ -57,13 +45,10 @@ export default function Hero() {
               leading-[0.95]
               tracking-tight
               text-white
-
               sm:text-5xl
               md:text-6xl
-
               lg:whitespace-nowrap
               lg:text-[4.35rem]
-
               xl:text-[4.9rem]
             "
           >
@@ -72,11 +57,9 @@ export default function Hero() {
 
           {/* Roles */}
           <div className="mt-8 flex flex-wrap gap-2 sm:gap-3">
-
             {[
               "DATA ENGINEER",
-              "SNOWFLAKE DEVELOPER",
-              "DATA ANALYTICS",
+              "DATA ANALYST",
             ].map((role) => (
               <span
                 key={role}
@@ -85,32 +68,28 @@ export default function Hero() {
                 {role}
               </span>
             ))}
-
           </div>
 
           {/* Description */}
           <p className="mt-8 max-w-2xl text-base leading-7 text-zinc-400 md:text-lg md:leading-8">
-            I build reliable data pipelines and cloud data
-            solutions that transform raw data into
-            analytics-ready information.
+            I build reliable data pipelines, cloud data solutions,
+            and analytics-ready datasets that help teams turn raw data
+            into useful business insights.
           </p>
 
           {/* Availability */}
           <div className="mt-7 inline-flex max-w-full items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-300 backdrop-blur-sm">
-
             <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-400" />
 
             <span>
               Open to Full-Time Opportunities
             </span>
-
           </div>
 
           {/* Contact */}
           <div className="mt-8 flex flex-col gap-4 text-base text-zinc-200 md:flex-row md:flex-wrap md:gap-8 md:text-lg">
 
             <div className="flex items-center gap-3">
-
               <MapPin
                 size={22}
                 className="shrink-0 text-zinc-300"
@@ -119,11 +98,9 @@ export default function Hero() {
               <span>
                 Chicago, IL
               </span>
-
             </div>
 
             <div className="flex min-w-0 items-center gap-3">
-
               <Mail
                 size={22}
                 className="shrink-0 text-zinc-300"
@@ -135,11 +112,9 @@ export default function Hero() {
               >
                 vykuntakishore@gmail.com
               </a>
-
             </div>
 
             <div className="flex items-center gap-3">
-
               <Phone
                 size={22}
                 className="shrink-0 text-zinc-300"
@@ -151,27 +126,16 @@ export default function Hero() {
               >
                 +1 (856) 526-0810
               </a>
-
             </div>
 
           </div>
 
-          {/* Buttons */}
+          {/* Main Button */}
           <div className="mt-9 flex w-full flex-col gap-4 sm:flex-row sm:flex-wrap">
 
             <a
-              href="/resume.pdf"
-              download
-              className="group flex w-full items-center justify-center gap-3 rounded-full bg-white px-7 py-3.5 text-base font-semibold text-black transition duration-300 hover:scale-[1.03] hover:bg-zinc-200 sm:w-auto"
-            >
-              <Download size={20} />
-
-              Download Resume
-            </a>
-
-            <a
               href="#projects"
-              className="group flex w-full items-center justify-center gap-3 rounded-full border border-zinc-700 bg-black/20 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition duration-300 hover:scale-[1.03] hover:border-zinc-400 hover:bg-white/[0.04] sm:w-auto"
+              className="group flex w-full items-center justify-center gap-3 rounded-full bg-white px-7 py-3.5 text-base font-semibold text-black transition duration-300 hover:scale-[1.03] hover:bg-zinc-200 sm:w-auto"
             >
               View Projects
 
@@ -179,6 +143,13 @@ export default function Hero() {
                 size={20}
                 className="transition duration-300 group-hover:translate-x-1"
               />
+            </a>
+
+            <a
+              href="#contact"
+              className="flex w-full items-center justify-center gap-3 rounded-full border border-zinc-700 bg-black/20 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition duration-300 hover:scale-[1.03] hover:border-zinc-400 hover:bg-white/[0.04] sm:w-auto"
+            >
+              Contact Me
             </a>
 
           </div>
@@ -218,21 +189,15 @@ export default function Hero() {
 
         </div>
 
-        {/* =====================================================
-            PHOTO
-        ====================================================== */}
-
+        {/* PHOTO */}
         <div className="relative mx-auto hidden w-full max-w-[570px] lg:block">
 
           <div className="photo-wing-accent" />
 
-          {/* Blue/Purple glow */}
           <div className="absolute -inset-10 rounded-[3.5rem] bg-gradient-to-br from-blue-500/15 via-transparent to-purple-500/20 blur-3xl" />
 
-          {/* Outer frame */}
           <div className="absolute -inset-4 rounded-[3.2rem] border border-blue-400/[0.08]" />
 
-          {/* Image */}
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[3rem] border border-white/[0.08] bg-black/20 shadow-2xl">
 
             <Image
@@ -244,13 +209,9 @@ export default function Hero() {
               className="object-cover object-top"
             />
 
-            {/* Very soft bottom blend */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#05070b]/28 via-transparent to-transparent" />
 
           </div>
-
-          {/* Role */}
-          
 
         </div>
 

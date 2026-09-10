@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vykunta Kishore | Data Engineer",
+  title: "Vykunta Kishore | Data Engineer & Data Analyst",
   description:
-    "Portfolio of Vykunta Kishore, a Data Engineer specializing in Snowflake, dbt, AWS, SQL, Python, Spark, and modern data engineering.",
+    "Portfolio of Vykunta Kishore, a Data Engineer and Data Analyst with experience in Snowflake, Databricks, AWS, dbt, PySpark, SQL, Python, ETL/ELT, data modeling, analytics, and cloud data platforms.",
 };
 
 export default function RootLayout({

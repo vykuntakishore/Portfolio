@@ -44,7 +44,7 @@ export default function Footer() {
               </div>
 
               <p className="mt-2 text-sm text-zinc-500">
-                Data Engineer · Snowflake · dbt · AWS
+                Data Engineer · Data Analyst · Snowflake · Databricks · AWS
               </p>
 
             </div>
@@ -111,7 +111,7 @@ export default function Footer() {
 
         </div>
 
-        {/* Tiny bottom line */}
+        {/* Bottom line */}
         <p className="mt-5 text-center text-[11px] uppercase tracking-[0.18em] text-zinc-700">
           Built with Next.js · TypeScript · Tailwind CSS
         </p>
