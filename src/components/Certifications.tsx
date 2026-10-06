@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
+
 import {
-  Award,
+  ArrowUpRight,
   BadgeCheck,
   BrainCircuit,
   Cpu,
-  ExternalLink,
 } from "lucide-react";
 
 const certifications = [
@@ -16,26 +17,40 @@ const certifications = [
     type: "Accreditation",
     icon: BadgeCheck,
     color: "#FF3621",
-    description:
-      "Foundational knowledge of the Databricks Lakehouse Platform, data engineering concepts, analytics workflows, and platform capabilities.",
+
+    image:
+      "/certificates/databricks-fundamentals.png",
+
+    certificate:
+      "/certificates/databricks-fundamentals.pdf",
   },
+
   {
     title: "Generative AI Fundamentals",
     issuer: "Databricks Academy",
     type: "Accreditation",
     icon: BrainCircuit,
     color: "#8B5CF6",
-    description:
-      "Fundamentals of Generative AI, large language models, responsible AI concepts, and practical AI applications within modern data platforms.",
+
+    image:
+      "/certificates/generative-ai-fundamentals.png",
+
+    certificate:
+      "/certificates/generative-ai-fundamentals.pdf",
   },
+
   {
     title: "NI CLAD Training",
     issuer: "KL University",
-    type: "LabVIEW Associate Developer",
+    type: "LabVIEW Associate Developer Training",
     icon: Cpu,
     color: "#FACC15",
-    description:
-      "Training focused on LabVIEW programming, Virtual Instruments, data acquisition, instrumentation, and measurement-system development.",
+
+    image:
+      "/certificates/ni-clad-training.png",
+
+    certificate:
+      "/certificates/ni-clad-training.pdf",
   },
 ];
 
@@ -66,119 +81,147 @@ export default function Certifications() {
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
+          <h2 className="text-4xl font-bold text-white md:text-6xl">
             Certifications
-          </p>
-
-          <h2 className="mt-6 text-3xl font-bold text-white md:text-5xl">
-            Professional Credentials
           </h2>
 
           <p className="mt-6 max-w-3xl text-base leading-8 text-zinc-400 md:text-lg">
-            Certifications and technical training that complement my
-            experience across Data Engineering, Databricks, Generative AI,
-            analytics, and engineering systems.
+            Certifications and technical training across Databricks,
+            Generative AI, data platforms, and engineering systems.
           </p>
         </motion.div>
 
-        {/* Cards */}
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        {/* Certification Cards */}
+        <div className="mt-14 grid gap-7 lg:grid-cols-3">
 
-          {certifications.map((certification, index) => {
-            const Icon = certification.icon;
+          {certifications.map(
+            (certification, index) => {
+              const Icon = certification.icon;
 
-            return (
-              <motion.article
-                key={certification.title}
-                initial={{
-                  opacity: 0,
-                  y: 35,
-                  scale: 0.98,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.15,
-                }}
-                transition={{
-                  duration: 0.55,
-                  delay: index * 0.1,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                whileHover={{
-                  y: -5,
-                }}
-                className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#080b11]/80 p-7 backdrop-blur-md transition-all duration-300 hover:border-white/20 md:p-8"
-              >
-                {/* Glow */}
-                <div
-                  className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full blur-3xl"
-                  style={{
-                    backgroundColor: `${certification.color}10`,
+              return (
+                <motion.article
+                  key={certification.title}
+                  initial={{
+                    opacity: 0,
+                    y: 35,
+                    scale: 0.98,
                   }}
-                />
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.12,
+                  }}
+                  transition={{
+                    duration: 0.55,
+                    delay: index * 0.1,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  whileHover={{
+                    y: -5,
+                  }}
+                  className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#080b11]/85 backdrop-blur-md transition-all duration-300 hover:border-white/20"
+                >
 
-                <div className="relative z-10">
-
-                  {/* Top */}
-                  <div className="flex items-start justify-between gap-5">
-
-                    <div
-                      className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border"
-                      style={{
-                        color: certification.color,
-                        borderColor: `${certification.color}35`,
-                        backgroundColor: `${certification.color}10`,
-                        boxShadow: `0 0 24px ${certification.color}10`,
-                      }}
-                    >
-                      <Icon size={27} />
-                    </div>
-
-                    <Award
-                      size={22}
-                      className="text-zinc-700 transition duration-300 group-hover:text-zinc-500"
+                  {/* Certificate Preview */}
+                  <a
+                    href={certification.certificate}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative block aspect-[4/3] w-full overflow-hidden border-b border-white/[0.07] bg-zinc-950"
+                  >
+                    <Image
+                      src={certification.image}
+                      alt={`${certification.title} certificate`}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
                     />
 
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition duration-300 group-hover:bg-black/45">
+
+                      <div className="flex translate-y-3 items-center gap-2 rounded-full border border-white/20 bg-black/70 px-4 py-2 text-sm font-medium text-white opacity-0 backdrop-blur-md transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                        View Certificate
+                        <ArrowUpRight size={16} />
+                      </div>
+
+                    </div>
+                  </a>
+
+                  {/* Card Content */}
+                  <div className="relative p-7 md:p-8">
+
+                    {/* Glow */}
+                    <div
+                      className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full blur-3xl"
+                      style={{
+                        backgroundColor:
+                          `${certification.color}10`,
+                      }}
+                    />
+
+                    <div className="relative z-10">
+
+                      {/* Icon */}
+                      <div
+                        className="flex h-12 w-12 items-center justify-center rounded-xl border"
+                        style={{
+                          color:
+                            certification.color,
+
+                          borderColor:
+                            `${certification.color}35`,
+
+                          backgroundColor:
+                            `${certification.color}10`,
+                        }}
+                      >
+                        <Icon size={24} />
+                      </div>
+
+                      {/* Type */}
+                      <p
+                        className="mt-6 text-xs font-semibold uppercase tracking-[0.18em]"
+                        style={{
+                          color:
+                            certification.color,
+                        }}
+                      >
+                        {certification.type}
+                      </p>
+
+                      {/* Title */}
+                      <h3 className="mt-3 text-2xl font-semibold leading-tight text-white">
+                        {certification.title}
+                      </h3>
+
+                      {/* Issuer */}
+                      <p className="mt-3 text-sm text-zinc-500">
+                        {certification.issuer}
+                      </p>
+
+                      {/* Button */}
+                      <a
+                        href={certification.certificate}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-5 py-2.5 text-sm font-medium text-zinc-300 transition duration-300 hover:border-white/25 hover:bg-white/[0.07] hover:text-white"
+                      >
+                        View Certificate
+                        <ArrowUpRight size={16} />
+                      </a>
+
+                    </div>
                   </div>
 
-                  {/* Certification Type */}
-                  <p
-                    className="mt-7 text-xs font-semibold uppercase tracking-[0.18em]"
-                    style={{
-                      color: certification.color,
-                    }}
-                  >
-                    {certification.type}
-                  </p>
-
-                  {/* Title */}
-                  <h3 className="mt-3 text-2xl font-semibold leading-tight text-white">
-                    {certification.title}
-                  </h3>
-
-                  {/* Issuer */}
-                  <p className="mt-3 text-sm font-medium text-zinc-400">
-                    {certification.issuer}
-                  </p>
-
-                  {/* Divider */}
-                  <div className="my-6 h-px bg-white/[0.07]" />
-
-                  {/* Description */}
-                  <p className="text-sm leading-7 text-zinc-500">
-                    {certification.description}
-                  </p>
-
-                </div>
-
-              </motion.article>
-            );
-          })}
+                </motion.article>
+              );
+            }
+          )}
 
         </div>
 
