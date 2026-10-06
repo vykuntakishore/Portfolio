@@ -72,9 +72,9 @@ export default function Hero() {
 
           {/* Description */}
           <p className="mt-8 max-w-2xl text-base leading-7 text-zinc-400 md:text-lg md:leading-8">
-            I build reliable data pipelines, cloud data solutions,
-            and analytics-ready datasets that help teams turn raw data
-            into useful business insights.
+            I design and build reliable ETL/ELT pipelines and cloud data
+            solutions using Snowflake, dbt, AWS, SQL, and Python, transforming
+            raw enterprise data into secure, analytics-ready datasets.
           </p>
 
           {/* Availability */}
@@ -130,7 +130,7 @@ export default function Hero() {
 
           </div>
 
-          {/* Main Button */}
+          {/* Main Buttons */}
           <div className="mt-9 flex w-full flex-col gap-4 sm:flex-row sm:flex-wrap">
 
             <a

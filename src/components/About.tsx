@@ -10,8 +10,8 @@ import {
 
 const highlights = [
   {
-    title: "4 Years",
-    subtitle: "Data Engineering & Analytics",
+    title: "Nearly 2 Years",
+    subtitle: "Data Engineering Experience",
     icon: Database,
     accent:
       "border-cyan-400/20 bg-cyan-400/[0.05] text-cyan-300",
@@ -28,8 +28,8 @@ const highlights = [
       "hover:border-blue-400/30 hover:shadow-[0_15px_50px_rgba(59,130,246,0.06)]",
   },
   {
-    title: "AWS + Databricks",
-    subtitle: "Cloud & Distributed Processing",
+    title: "AWS + DataStage",
+    subtitle: "Enterprise Data Integration",
     icon: Cloud,
     accent:
       "border-purple-400/20 bg-purple-400/[0.05] text-purple-300",
@@ -37,7 +37,7 @@ const highlights = [
       "hover:border-purple-400/30 hover:shadow-[0_15px_50px_rgba(168,85,247,0.06)]",
   },
   {
-    title: "Python + SQL + PySpark",
+    title: "SQL + Python",
     subtitle: "Data Processing & Analytics",
     icon: BarChart3,
     accent:
@@ -72,18 +72,18 @@ export default function About() {
           amount: 0.16,
         }}
       >
-        {/* Section label */}
+        {/* Section Label */}
         <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
           About Me
         </p>
 
-        {/* Main content */}
+        {/* Main Content */}
         <div className="mt-8 grid w-full min-w-0 gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
 
           {/* Left */}
           <div className="min-w-0">
             <h2 className="w-full max-w-xl break-words text-3xl font-bold leading-tight text-white md:text-5xl">
-              Turning raw data into reliable, analytics-ready information.
+              Building reliable data pipelines from ingestion to analytics.
             </h2>
 
             <div className="mt-7 h-px w-24 bg-gradient-to-r from-cyan-400/70 via-blue-400/40 to-transparent" />
@@ -93,33 +93,32 @@ export default function About() {
           <div className="min-w-0 space-y-6 text-base leading-8 text-zinc-400 md:text-lg">
 
             <p>
-              I&apos;m a Data Engineer with 4 years of experience designing
-              and supporting ETL/ELT pipelines across Snowflake, dbt, AWS,
-              and Databricks. My work focuses on building dependable data
-              workflows that move enterprise data from source systems into
-              analytics-ready platforms.
+              I&apos;m a Data Engineer with nearly 2 years of Data Engineering
+              experience, along with a prior Data Analyst internship. I focus on
+              building enterprise-scale ETL/ELT pipelines that move data from
+              on-premises systems into AWS S3 and Snowflake for regulatory,
+              analytical, and business reporting.
             </p>
 
             <p>
-              I have hands-on experience with Medallion Architecture,
-              incremental processing, dimensional modeling, PySpark,
-              IBM DataStage, CI/CD-driven deployments, and data quality
-              controls including validation, reconciliation, RBAC, and
-              row-level access patterns.
+              My hands-on experience includes Snowflake, dbt Core, IBM
+              DataStage, SQL, Python, Medallion Architecture, incremental
+              processing, data modeling, CI/CD, and governance controls such
+              as RBAC, RLAC, secure views, and masking policies.
             </p>
 
             <p>
-              My earlier Data Analyst experience also gives me a strong
-              analytics perspective, including SQL-based analysis, Spark
-              processing, Power BI reporting, and translating business data
-              into useful insights for downstream users.
+              My Data Analyst background adds an analytics perspective through
+              SQL, Python, Excel, Power BI, data profiling, and quality
+              validation, helping me design data solutions that are both
+              reliable for engineering teams and useful for business users.
             </p>
 
           </div>
 
         </div>
 
-        {/* Highlight cards */}
+        {/* Highlight Cards */}
         <div className="mt-14 grid w-full min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
           {highlights.map((item, index) => {
